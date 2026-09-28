@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { BookCover } from "./BookCover";
-import { useCheckout } from "@/lib/useCheckout";
 import { formatPrice, type SiteConfig } from "@/lib/useConfig";
 import { Loader2, Download, Smartphone, Lock } from "lucide-react";
 
@@ -14,9 +14,16 @@ const lineVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/8x2bJ1aIp7eH3oodf8eME00";
+
 export function HeroSection({ prenom, config }: HeroSectionProps) {
   const reduce = useReducedMotion();
-  const { startCheckout, loading, error } = useCheckout();
+  const [loading, setLoading] = useState(false);
+
+  const startCheckout = () => {
+    setLoading(true);
+    window.location.href = STRIPE_PAYMENT_LINK;
+  };
   const lines = [
     `Bienvenue${prenom ? ` ${prenom}` : ""},`,
     "votre lecture gratuite",
@@ -134,9 +141,6 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               {loading && <Loader2 className="h-4 w-4 animate-spin" />}
               {loading ? "Redirection…" : `Accéder au guide pour ${formatPrice(config.price_euros)}`}
             </button>
-            {error && (
-              <p className="mt-3 text-sm text-[#A63D40]" data-testid="hero-checkout-error">{error}</p>
-            )}
             <ul className="mx-auto mt-7 w-fit space-y-3 text-left" data-testid="hero-features-list">
               {[
                 { icon: Download, label: "PDF numérique, accès immédiat après paiement" },
