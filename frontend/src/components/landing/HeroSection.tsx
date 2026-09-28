@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { BookCover } from "./BookCover";
+import { goToPayment } from "@/lib/payment";
 import { formatPrice, type SiteConfig } from "@/lib/useConfig";
 import { Loader2, Download, Smartphone, Lock } from "lucide-react";
 
@@ -22,7 +23,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
 
   const startCheckout = () => {
     setLoading(true);
-    window.location.href = STRIPE_PAYMENT_LINK;
+    goToPayment();
   };
   const lines = [
     `Bienvenue${prenom ? ` ${prenom}` : ""},`,

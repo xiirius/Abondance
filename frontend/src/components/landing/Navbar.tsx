@@ -1,5 +1,6 @@
 import { Logo } from "./Logo";
 import { scrollToId } from "@/lib/scroll";
+import { goToPayment } from "@/lib/payment";
 
 export function Navbar() {
   return (
@@ -20,7 +21,7 @@ export function Navbar() {
           </button>
         </nav>
         <button
-          onClick={() => { window.location.href = "https://buy.stripe.com/8x2bJ1aIp7eH3oodf8eME00"; }}
+          onClick={goToPayment}
           className="rounded-full bg-forest px-5 py-2.5 font-sans text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-[#2D4B39] hover:shadow-lg"
           data-testid="nav-cta-button"
         >

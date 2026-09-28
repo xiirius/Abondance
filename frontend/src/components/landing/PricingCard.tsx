@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Reveal } from "./Reveal";
-import { useCheckout } from "@/lib/useCheckout";
+import { goToPayment } from "@/lib/payment";
 import { formatPrice, type SiteConfig } from "@/lib/useConfig";
 import { Download, Lock, Smartphone, CreditCard, Loader2 } from "lucide-react";
 
@@ -8,7 +9,12 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ config }: PricingCardProps) {
-  const { startCheckout, loading, error } = useCheckout();
+  const [loading, setLoading] = useState(false);
+
+  const startCheckout = () => {
+    setLoading(true);
+    goToPayment();
+  };
 
   const features = [
     { icon: Download, label: "PDF numérique, téléchargement immédiat après paiement" },
@@ -61,9 +67,6 @@ export function PricingCard({ config }: PricingCardProps) {
               {loading && <Loader2 className="h-5 w-5 animate-spin" />}
               {loading ? "Redirection vers le paiement…" : `Accéder au guide pour ${formatPrice(config.price_euros)}`}
             </button>
-            {error && (
-              <p className="mt-3 text-center text-sm text-[#A63D40]" data-testid="checkout-error-message">{error}</p>
-            )}
             <p className="mt-4 flex items-center justify-center gap-1.5 text-center font-sans text-xs text-muted-warm">
               <CreditCard className="h-3.5 w-3.5" />
               Paiement unique sécurisé. Aucun abonnement. Téléchargement immédiat.
