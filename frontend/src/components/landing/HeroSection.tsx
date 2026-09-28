@@ -70,7 +70,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             </motion.p>
             <motion.p variants={lineVariants} className="pt-6">
               J'ai créé un guide basé sur mes{" "}
-              <span className="font-heading italic text-gold">42 années de pratique et d'expérience</span>{" "}
+              <span className="font-heading italic text-gold">52 années de pratique et d'expérience</span>{" "}
               autour de <span className="font-medium text-sage-deep">la méditation</span>,{" "}
               <span className="font-medium text-sage-deep">du développement personnel</span>,{" "}
               <span className="font-medium text-sage-deep">de l'énergie</span> et{" "}
