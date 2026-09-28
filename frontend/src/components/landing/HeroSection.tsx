@@ -80,7 +80,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               <em>Le Guide de l'Abondance Intérieure</em> vous propose un cheminement simple, à
               votre rythme :
             </motion.p>
-            <motion.ul variants={lineVariants} className="space-y-3.5 pt-1">
+            <motion.ul variants={lineVariants} className="space-y-3.5 pt-5">
               {[
                 "des repères pour mieux comprendre ce que vous traversez ;",
                 "des exercices d'écriture pour prendre du recul et clarifier vos pensées ;",
