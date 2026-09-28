@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { BookCover } from "./BookCover";
 import { useCheckout } from "@/lib/useCheckout";
 import { formatPrice, type SiteConfig } from "@/lib/useConfig";
-import { Loader2 } from "lucide-react";
+import { Loader2, Download, Smartphone, Lock } from "lucide-react";
 
 interface HeroSectionProps {
   prenom: string | null;
@@ -137,7 +137,21 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             {error && (
               <p className="mt-3 text-sm text-[#A63D40]" data-testid="hero-checkout-error">{error}</p>
             )}
-            <p className="mt-3 font-sans text-xs text-muted-warm">
+            <ul className="mx-auto mt-7 w-fit space-y-3 text-left" data-testid="hero-features-list">
+              {[
+                { icon: Download, label: "PDF numérique, téléchargement immédiat après paiement" },
+                { icon: Smartphone, label: "Lecture sur téléphone, tablette ou ordinateur" },
+                { icon: Lock, label: "Paiement sécurisé via Stripe (CB, Apple Pay)" },
+              ].map((f) => (
+                <li key={f.label} className="flex items-center gap-3">
+                  <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage text-sage-deep">
+                    <f.icon className="h-3.5 w-3.5" strokeWidth={1.75} />
+                  </span>
+                  <span className="font-sans text-xs leading-snug text-muted-warm sm:text-sm">{f.label}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 font-sans text-xs text-muted-warm">
               Paiement unique sécurisé. Téléchargement immédiat.
             </p>
           </motion.div>
