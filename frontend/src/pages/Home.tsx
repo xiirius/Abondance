@@ -27,7 +27,7 @@ export default function Home() {
       {!prenom && <CaptureModal onDone={(p) => setPrenom(p)} />}
       <Navbar />
       <main>
-        <HeroSection prenom={prenom} />
+        <HeroSection prenom={prenom} config={config} />
         <EditorialMarquee />
         <WhyThisGuide />
         <BenefitsGrid />

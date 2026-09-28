@@ -1,13 +1,18 @@
 import { motion, useReducedMotion } from "motion/react";
 import { BookCover } from "./BookCover";
 import { scrollToId } from "@/lib/scroll";
+import { useCheckout } from "@/lib/useCheckout";
+import { formatPrice, type SiteConfig } from "@/lib/useConfig";
+import { Loader2 } from "lucide-react";
 
 interface HeroSectionProps {
   prenom: string | null;
+  config: SiteConfig;
 }
 
-export function HeroSection({ prenom }: HeroSectionProps) {
+export function HeroSection({ prenom, config }: HeroSectionProps) {
   const reduce = useReducedMotion();
+  const { startCheckout, loading, error } = useCheckout();
   const lines = [
     `Bienvenue${prenom ? ` ${prenom}` : ""},`,
     "votre lecture gratuite",
@@ -64,17 +69,19 @@ export function HeroSection({ prenom }: HeroSectionProps) {
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.95 }}
-            className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+            className="mt-10"
           >
-            <button
-              onClick={() => scrollToId("guide")}
-              className="rounded-full bg-forest px-9 py-4 font-sans text-base font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-[#2D4B39] hover:shadow-xl"
-              data-testid="hero-discover-button"
-            >
-              Découvrir le guide
-            </button>
-            <p className="font-sans text-sm text-muted-warm">
-              Votre lecture arrive prochainement dans votre boîte mail.
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <button
+                onClick={() => scrollToId("guide")}
+                className="rounded-full border border-forest/25 bg-white/60 px-9 py-4 font-sans text-base font-medium text-forest transition-all hover:-translate-y-0.5 hover:border-forest/50 hover:shadow-lg"
+                data-testid="hero-discover-button"
+              >
+                Découvrir le guide
+              </button>
+            </div>
+            <p className="mt-4 font-sans text-sm text-muted-warm" data-testid="hero-note">
+              Votre lecture gratuite arrive prochainement dans votre boîte mail.
             </p>
           </motion.div>
         </div>
@@ -86,6 +93,28 @@ export function HeroSection({ prenom }: HeroSectionProps) {
           className="lg:col-span-5"
         >
           <BookCover />
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.15 }}
+            className="mt-12 text-center"
+          >
+            <button
+              onClick={startCheckout}
+              disabled={loading}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-forest px-9 py-4 font-sans text-base font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-[#2D4B39] hover:shadow-xl disabled:opacity-60 disabled:hover:translate-y-0"
+              data-testid="hero-buy-button"
+            >
+              {loading && <Loader2 className="h-4 w-4 animate-spin" />}
+              {loading ? "Redirection…" : `Accéder au guide pour ${formatPrice(config.price_euros)}`}
+            </button>
+            {error && (
+              <p className="mt-3 text-sm text-[#A63D40]" data-testid="hero-checkout-error">{error}</p>
+            )}
+            <p className="mt-3 font-sans text-xs text-muted-warm">
+              Paiement unique sécurisé. Téléchargement immédiat.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

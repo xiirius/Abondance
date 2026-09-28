@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Reveal } from "./Reveal";
-import { apiPost } from "@/lib/api";
+import { useCheckout } from "@/lib/useCheckout";
 import { formatPrice, type SiteConfig } from "@/lib/useConfig";
 import { Download, Lock, Smartphone, CreditCard, Loader2 } from "lucide-react";
 
@@ -8,30 +7,8 @@ interface PricingCardProps {
   config: SiteConfig;
 }
 
-interface CheckoutResponse {
-  checkout_url: string;
-  session_id: string;
-}
-
 export function PricingCard({ config }: PricingCardProps) {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  const checkout = async () => {
-    setLoading(true);
-    setError("");
-    try {
-      const res = await apiPost<CheckoutResponse>("/payments/checkout", {
-        origin_url: window.location.origin,
-        prenom: localStorage.getItem("abondance_prenom") || undefined,
-        email: localStorage.getItem("abondance_email") || undefined,
-      });
-      window.location.href = res.checkout_url;
-    } catch {
-      setError("Le paiement n'a pas pu démarrer. Merci de réessayer dans un instant.");
-      setLoading(false);
-    }
-  };
+  const { startCheckout, loading, error } = useCheckout();
 
   const features = [
     { icon: Download, label: "PDF numérique, téléchargement immédiat après paiement" },
@@ -76,7 +53,7 @@ export function PricingCard({ config }: PricingCardProps) {
             </ul>
 
             <button
-              onClick={checkout}
+              onClick={startCheckout}
               disabled={loading}
               className="mt-10 flex w-full items-center justify-center gap-2 rounded-full bg-forest py-4.5 font-sans text-lg font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-[#2D4B39] hover:shadow-xl disabled:opacity-60 disabled:hover:translate-y-0"
               data-testid="cta-buy-main-button"
