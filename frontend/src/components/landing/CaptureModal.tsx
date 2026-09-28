@@ -12,7 +12,6 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 export function CaptureModal({ onDone }: CaptureModalProps) {
   const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
-  const [consent, setConsent] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,10 +20,9 @@ export function CaptureModal({ onDone }: CaptureModalProps) {
     setError("");
     if (prenom.trim().length < 2) return setError("Merci d'indiquer votre prénom.");
     if (!EMAIL_RE.test(email.trim())) return setError("Merci d'indiquer une adresse e-mail valide.");
-    if (!consent) return setError("Merci de cocher la case de consentement pour continuer.");
     setLoading(true);
     try {
-      await apiPost("/leads", { prenom: prenom.trim(), email: email.trim(), consent });
+      await apiPost("/leads", { prenom: prenom.trim(), email: email.trim(), consent: true });
       localStorage.setItem("abondance_prenom", prenom.trim());
       localStorage.setItem("abondance_email", email.trim().toLowerCase());
       onDone(prenom.trim(), email.trim().toLowerCase());
@@ -95,20 +93,6 @@ export function CaptureModal({ onDone }: CaptureModalProps) {
               data-testid="capture-email-input"
             />
           </div>
-          <label className="flex cursor-pointer items-start gap-3" data-testid="capture-consent-label">
-            <input
-              type="checkbox"
-              checked={consent}
-              onChange={(e) => setConsent(e.target.checked)}
-              className="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded accent-[#385244]"
-              data-testid="capture-consent-checkbox"
-            />
-            <span className="text-xs leading-relaxed text-muted-warm">
-              J'accepte de recevoir ma lecture personnalisée gratuite et les communications liées à ce
-              guide. Je peux me désinscrire à tout moment.
-            </span>
-          </label>
-
           {error && (
             <p className="rounded-lg bg-[#A63D40]/10 px-3 py-2 text-sm text-[#A63D40]" data-testid="capture-error-message">
               {error}
