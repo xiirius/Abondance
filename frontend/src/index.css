@@ -43,7 +43,7 @@
     --color-sage-deep: #4A6B5D;
     --color-forest: #385244;
     --color-ink: #23201C;
-    --color-muted-warm: #5C564E;
+    --color-muted-warm: #474139;
     --color-gold: #9A6A2C;
     --color-gold-soft: #D8AE68;
     --color-night: #1F2320;
@@ -69,7 +69,7 @@
     --secondary: #F3ECE0;
     --secondary-foreground: #23201C;
     --muted: #F3ECE0;
-    --muted-foreground: #5C564E;
+    --muted-foreground: #474139;
     --accent: #EAEFEA;
     --accent-foreground: #1E2E25;
     --destructive: #A63D40;
@@ -94,6 +94,9 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-weight: 470;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
   }
   html {
     @apply font-sans;

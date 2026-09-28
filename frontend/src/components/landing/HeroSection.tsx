@@ -68,7 +68,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               En attendant votre lecture, prenez quelques minutes pour découvrir la suite : vous
               risqueriez de passer à côté de l'essentiel.
             </motion.p>
-            <motion.p variants={lineVariants} className="pt-2">
+            <motion.p variants={lineVariants} className="pt-6">
               J'ai créé ce guide à partir de mes{" "}
               <span className="font-heading italic text-gold">42 années de pratique et d'expérience</span>{" "}
               autour de <span className="font-medium text-sage-deep">la méditation</span>,{" "}
@@ -76,10 +76,10 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               <span className="font-medium text-sage-deep">de l'énergie</span> et{" "}
               <span className="font-medium text-sage-deep">de la spiritualité douce</span>.
             </motion.p>
-            <motion.p variants={lineVariants} className="pt-2 text-ink">
+            <motion.p variants={lineVariants} className="pt-6 text-ink">
               <em>Le Guide de l'Abondance Intérieure</em> vous accompagne pas à pas :
             </motion.p>
-            <motion.ul variants={lineVariants} className="space-y-2">
+            <motion.ul variants={lineVariants} className="space-y-3.5 pt-1">
               {[
                 "des repères clairs pour y voir plus net,",
                 "des exercices d'écriture pour vous recentrer,",
@@ -92,7 +92,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
                 </li>
               ))}
             </motion.ul>
-            <motion.p variants={lineVariants} className="pt-2">
+            <motion.p variants={lineVariants} className="pt-6">
               Une ressource complète, bienveillante et honnête, pour retrouver{" "}
               <span className="font-heading italic text-sage-deep">clarté, énergie et paix intérieure</span>{" "}
               — et construire{" "}
