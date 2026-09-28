@@ -9,6 +9,11 @@ interface HeroSectionProps {
   config: SiteConfig;
 }
 
+const lineVariants = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
 export function HeroSection({ prenom, config }: HeroSectionProps) {
   const reduce = useReducedMotion();
   const { startCheckout, loading, error } = useCheckout();
@@ -52,22 +57,47 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             ))}
           </h1>
 
-          <motion.p
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
+          <motion.div
+            initial={reduce ? false : "hidden"}
+            animate="show"
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14, delayChildren: 0.7 } } }}
             className="mt-7 max-w-xl text-base leading-relaxed text-muted-warm sm:text-lg"
             data-testid="hero-subtitle"
           >
-            En attendant votre lecture, vous pouvez déjà aller plus loin. J'ai créé ce guide à
-            partir de mes 42 années de pratique et d'expérience autour de la méditation, du
-            développement personnel, de l'énergie et de la spiritualité douce.{" "}
-            <em className="text-ink">Le Guide de l'Abondance Intérieure</em> vous accompagne pas à
-            pas : des repères clairs pour y voir plus net, des exercices d'écriture pour vous
-            recentrer, des rituels doux pour apaiser vos journées et un programme de 30 jours pour
-            avancer concrètement. Une ressource complète, bienveillante et honnête, pour retrouver
-            clarté, énergie et paix intérieure — et construire une vie qui vous ressemble vraiment.
-          </motion.p>
+            <motion.p variants={lineVariants} className="font-heading text-xl italic leading-snug text-ink sm:text-2xl">
+              En attendant votre lecture, vous pouvez déjà aller plus loin.
+            </motion.p>
+            <motion.p variants={lineVariants} className="pt-2">
+              J'ai créé ce guide à partir de mes{" "}
+              <span className="font-heading italic text-gold">42 années de pratique et d'expérience</span>{" "}
+              autour de <span className="font-medium text-sage-deep">la méditation</span>,{" "}
+              <span className="font-medium text-sage-deep">du développement personnel</span>,{" "}
+              <span className="font-medium text-sage-deep">de l'énergie</span> et{" "}
+              <span className="font-medium text-sage-deep">de la spiritualité douce</span>.
+            </motion.p>
+            <motion.p variants={lineVariants} className="pt-2 text-ink">
+              <em>Le Guide de l'Abondance Intérieure</em> vous accompagne pas à pas :
+            </motion.p>
+            <motion.ul variants={lineVariants} className="space-y-2">
+              {[
+                "des repères clairs pour y voir plus net,",
+                "des exercices d'écriture pour vous recentrer,",
+                "des rituels doux pour apaiser vos journées",
+                "et un programme de 30 jours pour avancer concrètement.",
+              ].map((item) => (
+                <li key={item} className="flex items-baseline gap-3">
+                  <span className="shrink-0 font-heading text-gold" aria-hidden="true">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </motion.ul>
+            <motion.p variants={lineVariants} className="pt-2">
+              Une ressource complète, bienveillante et honnête, pour retrouver{" "}
+              <span className="font-heading italic text-sage-deep">clarté, énergie et paix intérieure</span>{" "}
+              — et construire{" "}
+              <span className="font-heading italic text-gold">une vie qui vous ressemble vraiment</span>.
+            </motion.p>
+          </motion.div>
 
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 16 }}
