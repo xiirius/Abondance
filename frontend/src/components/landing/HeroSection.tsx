@@ -74,7 +74,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               autour de <span className="font-medium text-sage-deep">la méditation</span>,{" "}
               <span className="font-medium text-sage-deep">du développement personnel</span>,{" "}
               <span className="font-medium text-sage-deep">de l'énergie</span> et{" "}
-              <span className="font-medium text-sage-deep">de la spiritualité douce</span>.
+              <span className="font-medium text-sage-deep">de la spiritualité</span>.
             </motion.p>
             <motion.p variants={lineVariants} className="pt-6 text-ink">
               <em>Le Guide de l'Abondance Intérieure</em> vous accompagne pas à pas :
