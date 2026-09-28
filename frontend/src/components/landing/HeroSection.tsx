@@ -77,14 +77,15 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               <span className="font-medium text-sage-deep">de la spiritualité</span>.
             </motion.p>
             <motion.p variants={lineVariants} className="pt-6 text-ink">
-              <em>Le Guide de l'Abondance Intérieure</em> vous accompagne pas à pas :
+              <em>Le Guide de l'Abondance Intérieure</em> vous propose un cheminement simple, à
+              votre rythme :
             </motion.p>
             <motion.ul variants={lineVariants} className="space-y-3.5 pt-1">
               {[
-                "des repères clairs pour y voir plus net,",
-                "des exercices d'écriture pour vous recentrer,",
-                "des rituels doux pour apaiser vos journées",
-                "et un programme de 30 jours pour avancer concrètement.",
+                "des repères pour mieux comprendre ce que vous traversez ;",
+                "des exercices d'écriture pour prendre du recul et clarifier vos pensées ;",
+                "des rituels faciles à intégrer à votre quotidien ;",
+                "un parcours de 30 jours pour mettre progressivement ces pratiques en place.",
               ].map((item) => (
                 <li key={item} className="flex items-baseline gap-3">
                   <span className="shrink-0 font-heading text-gold" aria-hidden="true">—</span>
@@ -93,10 +94,9 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               ))}
             </motion.ul>
             <motion.p variants={lineVariants} className="pt-6">
-              Une ressource complète, bienveillante et honnête, pour retrouver{" "}
-              <span className="font-heading italic text-sage-deep">clarté, énergie et paix intérieure</span>{" "}
-              — et construire{" "}
-              <span className="font-heading italic text-gold">une vie qui vous ressemble vraiment</span>.
+              L'idée n'est pas de tout changer d'un coup, mais de vous donner des outils concrets
+              pour{" "}
+              <span className="font-heading italic text-gold">avancer sereinement, un jour après l'autre</span>.
             </motion.p>
           </motion.div>
 
