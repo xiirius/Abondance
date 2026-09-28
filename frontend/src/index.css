@@ -44,7 +44,7 @@
     --color-forest: #385244;
     --color-ink: #23201C;
     --color-muted-warm: #5C564E;
-    --color-gold: #C69B56;
+    --color-gold: #9A6A2C;
     --color-gold-soft: #D8AE68;
     --color-night: #1F2320;
     --color-line: #E8E2D8;
@@ -75,7 +75,7 @@
     --destructive: #A63D40;
     --border: #E8E2D8;
     --input: #E8E2D8;
-    --ring: #C69B56;
+    --ring: #9A6A2C;
     --radius: 0.875rem;
     --sidebar: #FAF7F2;
     --sidebar-foreground: #23201C;
@@ -84,7 +84,7 @@
     --sidebar-accent: #EAEFEA;
     --sidebar-accent-foreground: #1E2E25;
     --sidebar-border: #E8E2D8;
-    --sidebar-ring: #C69B56;
+    --sidebar-ring: #9A6A2C;
 }
 
 @layer base {
@@ -93,12 +93,13 @@
   }
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-weight: 470;
   }
   html {
     @apply font-sans;
   }
   ::selection {
-    background: #C69B56;
+    background: #9A6A2C;
     color: #1F2320;
   }
 }

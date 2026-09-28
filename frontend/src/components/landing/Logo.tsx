@@ -1,5 +1,5 @@
 export function Logo({ dark = false }: { dark?: boolean }) {
-  const stroke = "#C69B56";
+  const stroke = "#9A6A2C";
   return (
     <span className="inline-flex items-center gap-2.5" data-testid="brand-logo">
       <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
