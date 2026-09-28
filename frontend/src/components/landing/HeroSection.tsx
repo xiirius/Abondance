@@ -59,7 +59,9 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             className="mt-7 max-w-xl text-base leading-relaxed text-muted-warm sm:text-lg"
             data-testid="hero-subtitle"
           >
-            En attendant votre lecture, vous pouvez déjà aller plus loin.{" "}
+            En attendant votre lecture, vous pouvez déjà aller plus loin. J'ai créé ce guide à
+            partir de mes 42 années de pratique et d'expérience autour de la méditation, du
+            développement personnel, de l'énergie et de la spiritualité douce.{" "}
             <em className="text-ink">Le Guide de l'Abondance Intérieure</em> vous accompagne pas à
             pas : des repères clairs pour y voir plus net, des exercices d'écriture pour vous
             recentrer, des rituels doux pour apaiser vos journées et un programme de 30 jours pour
