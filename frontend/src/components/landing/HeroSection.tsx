@@ -76,7 +76,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
               <span className="font-medium text-sage-deep">de l'énergie</span> et{" "}
               <span className="font-medium text-sage-deep">de la spiritualité</span>.
             </motion.p>
-            <motion.p variants={lineVariants} className="pt-6 text-ink">
+            <motion.p variants={lineVariants} className="pt-6 font-bold text-ink">
               <em>Le Guide de l'Abondance Intérieure</em> vous propose un cheminement simple, à
               votre rythme :
             </motion.p>
