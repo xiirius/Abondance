@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
 import { BookCover } from "./BookCover";
-import { scrollToId } from "@/lib/scroll";
 import { useCheckout } from "@/lib/useCheckout";
 import { formatPrice, type SiteConfig } from "@/lib/useConfig";
 import { Loader2 } from "lucide-react";
@@ -60,9 +59,12 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             className="mt-7 max-w-xl text-base leading-relaxed text-muted-warm sm:text-lg"
             data-testid="hero-subtitle"
           >
-            Si cette lecture vous a donné envie de vous reconnecter à vous-même,{" "}
-            <em className="text-ink">Le Guide de l'Abondance Intérieure</em> peut vous accompagner
-            plus loin, à votre rythme.
+            En attendant votre lecture, vous pouvez déjà aller plus loin.{" "}
+            <em className="text-ink">Le Guide de l'Abondance Intérieure</em> vous accompagne pas à
+            pas : des repères clairs pour y voir plus net, des exercices d'écriture pour vous
+            recentrer, des rituels doux pour apaiser vos journées et un programme de 30 jours pour
+            avancer concrètement. Une ressource complète, bienveillante et honnête, pour retrouver
+            clarté, énergie et paix intérieure — et construire une vie qui vous ressemble vraiment.
           </motion.p>
 
           <motion.div
@@ -71,16 +73,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             transition={{ duration: 0.8, delay: 0.95 }}
             className="mt-10"
           >
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <button
-                onClick={() => scrollToId("guide")}
-                className="rounded-full border border-forest/25 bg-white/60 px-9 py-4 font-sans text-base font-medium text-forest transition-all hover:-translate-y-0.5 hover:border-forest/50 hover:shadow-lg"
-                data-testid="hero-discover-button"
-              >
-                Découvrir le guide
-              </button>
-            </div>
-            <p className="mt-4 font-sans text-sm text-muted-warm" data-testid="hero-note">
+            <p className="font-sans text-sm text-muted-warm" data-testid="hero-note">
               Votre lecture gratuite arrive prochainement dans votre boîte mail.
             </p>
           </motion.div>
