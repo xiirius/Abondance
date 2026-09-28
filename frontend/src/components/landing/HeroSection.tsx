@@ -139,7 +139,7 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             )}
             <ul className="mx-auto mt-7 w-fit space-y-3 text-left" data-testid="hero-features-list">
               {[
-                { icon: Download, label: "PDF numérique, téléchargement immédiat après paiement" },
+                { icon: Download, label: "PDF numérique, accès immédiat après paiement" },
                 { icon: Smartphone, label: "Lecture sur téléphone, tablette ou ordinateur" },
                 { icon: Lock, label: "Paiement sécurisé via Stripe (CB, Apple Pay)" },
               ].map((f) => (
