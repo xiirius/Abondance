@@ -1,0 +1,274 @@
+{
+  "theme": "light",
+  "archetype": "ARCHETYPE 1: ORGANIC & EARTHY (Trust, Growth, Calm, Luxury Wellness)",
+  "emotional_tone": "Apaisant, très rassurant, mature, élégant, bienveillant, vouvoiement respectueux, aucune manipulation",
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#FAF7F2",
+        "on_bg": "#23201C",
+        "on_bg_muted": "#5C564E",
+        "roles": {
+          "link": "#7D6B4E",
+          "error": "#A63D40",
+          "success": "#3E6B52",
+          "accent_gold": "#C69B56",
+          "sage_tint": "#4A6B5D"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#23201C",
+        "on_bg_muted": "#5C564E",
+        "roles": {
+          "border": "#E8E2D8",
+          "accent_gold": "#C69B56",
+          "sage_tint": "#4A6B5D"
+        }
+      },
+      {
+        "name": "sage_card",
+        "kind": "solid",
+        "bg": "#EAEFEA",
+        "on_bg": "#1E2E25",
+        "on_bg_muted": "#415C4D",
+        "roles": {
+          "accent": "#2D4B39",
+          "border": "#D3DED4"
+        }
+      },
+      {
+        "name": "warm_sand",
+        "kind": "solid",
+        "bg": "#F3ECE0",
+        "on_bg": "#23201C",
+        "on_bg_muted": "#5C564E",
+        "roles": {
+          "border": "#E3D8C6",
+          "accent_gold": "#A07532"
+        }
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#1F2320",
+        "on_bg": "#FDFCFA",
+        "on_bg_muted": "#DDD4C8",
+        "roles": {
+          "link": "#E4C58E",
+          "accent_gold": "#D8AE68",
+          "border": "#374139"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "gradient",
+        "contrast_against": "#F4EFE6",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(250,247,242,0.95) 0%, rgba(243,236,224,0.85) 100%)",
+        "on_bg": "#23201C",
+        "on_bg_muted": "#5C564E",
+        "roles": {
+          "link": "#7D6B4E",
+          "error": "#A63D40",
+          "success": "#3E6B52"
+        }
+      },
+      {
+        "name": "glass_header",
+        "kind": "glass",
+        "contrast_against": "#FAF7F2",
+        "guarantee": "backdrop-blur-xl bg-[#FAF7F2]/85 border-b border-[#E8E2D8]",
+        "on_bg": "#23201C",
+        "on_bg_muted": "#5C564E"
+      },
+      {
+        "name": "modal_overlay",
+        "kind": "glass",
+        "contrast_against": "#1F2320",
+        "guarantee": "backdrop-blur-md bg-[#1F2320]/60",
+        "on_bg": "#FDFCFA",
+        "on_bg_muted": "#DDD4C8"
+      }
+    ],
+    "accent": "#385244",
+    "on_accent": "#FFFFFF",
+    "secondary_gold": "#C69B56",
+    "on_secondary_gold": "#1F2320"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Playfair Display Variable, Georgia, serif",
+      "body": "Lora Variable, Georgia, serif",
+      "ui_sans": "DM Sans Variable, sans-serif"
+    },
+    "font_imports": [
+      "@import \"@fontsource-variable/playfair-display\";",
+      "@import \"@fontsource-variable/lora\";",
+      "@import \"@fontsource-variable/dm-sans\";"
+    ],
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "headings_line_height": "leading-[1.15]",
+      "headings_tracking": "tracking-tight",
+      "body_line_height": "leading-relaxed",
+      "body_tracking": "tracking-normal",
+      "overlines": "text-xs uppercase tracking-[0.2em] font-medium text-[#7D6B4E]"
+    }
+  },
+  "entry_surfaces": {
+    "/": "split hero — brand identity & kinetic line-by-line reveal left, floating 3D golden-accented digital book showcase right, backed by subtle luminous circle aura",
+    "/checkout": "peaceful checkout screen — trust signals & product breakdown left, Stripe secure card form right",
+    "/merci": "reassuring centered celebration — instant PDF download access, audio guide bonus, receipt summary",
+    "/admin": "high-density management panel — sales & lead stats top, subscribers table with CSV export, settings form for live price & PDF URL update",
+    "/mentions-legales": "clean editorial longform reading container on page background",
+    "/cgv": "clean editorial legal terms on page background",
+    "/confidentialite": "clean RGPD privacy policy on page background",
+    "/remboursement": "clear 30-day serene guarantee terms on page background"
+  },
+  "visual_enhancers": {
+    "motifs": [
+      "Subtle radiant luminous circle / golden glow (radial gradients)",
+      "Fine celestial accents: thin golden crescent moon and starlight sparkles (SVG)",
+      "Soft botanical dappled shadow overlay texture",
+      "Refined gold border accents (1px subtle strokes #D8AE68/40)",
+      "Book cover mockup with 3D perspective, spine depth and satin reflection"
+    ],
+    "textures": "Subtle organic noise overlay at 2% opacity to eliminate digital sterility",
+    "marquee": "Slow editorial ribbon in Lora serif with low-contrast sage/sand badge separator, continuous gentle drift",
+    "decorations": "SVG sacred geometry lines, fine starlight dots, serene organic leaf silhouettes"
+  },
+  "media": {
+    "image_urls": [
+      {
+        "category": "hero_book_atmosphere",
+        "description": "Ambiance sereine d'ouverture de livre à la lumière dorée matinale",
+        "url": "https://images.unsplash.com/photo-1681396059172-7532b1ef8b47?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxqb3VybmFsJTIwb3BlbiUyMGJvb2slMjBnb2xkZW4lMjBsaWdodCUyMGRlc2t8ZW58MHx8fHwxNzkwNTU0MTIxfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "journal_zen_desk",
+        "description": "Carnet ouvert et bougie rituelle sur table en bois apaisante",
+        "url": "https://images.unsplash.com/photo-1654542645844-590f5b8c146a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxqb3VybmFsJTIwb3BlbiUyMGJvb2slMjBnb2xkZW4lMjBsaWdodCUyMGRlc2t8ZW58MHx8fHwxNzkwNTU0MTIxfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "serene_contemplation",
+        "description": "Femme mature sereine contemplant la lumière douce du matin avec sa tasse de thé",
+        "url": "https://images.unsplash.com/photo-1545386673-7723f55e5490?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwzfHxjYWxtJTIwc2VyZW5lJTIwd29tYW4lMjBtb3JuaW5nJTIwc3VubGlnaHQlMjB0ZWF8ZW58MHx8fHwxNzkwNTU0MTIxfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "botanical_shadow_bg",
+        "description": "Ombres végétales douces et organiques sur mur crème chaud",
+        "url": "https://images.unsplash.com/photo-1658934475116-990b909c3038?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwyfHxjYWxtJTIwYm90YW5pY2FsJTIwbGVhZiUyMHNvZnQlMjBzaGFkb3dzJTIwd2FybSUyMGJlaWdlfGVufDB8fHx8MTc5MDU1NDEyMXww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "gentle_foliage",
+        "description": "Feuillage délicat et lumière tamisée apaisante",
+        "url": "https://images.unsplash.com/photo-1633169621790-71e519cfb42d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxjYWxtJTIwYm90YW5pY2FsJTIwbGVhZiUyMHNvZnQlMjBzaGFkb3dzJTIwd2FybSUyMGJlaWdlfGVufDB8fHx8MTc5MDU1NDEyMXww&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "grids": {
+    "marketing_layout": "Bento asymétrique avec 'The Tetris Grid' : 1 col mobile, 8-12 cols desktop, gaps généreux (gap-6 à gap-10)",
+    "benefit_cards": "Grid 3 colonnes asymétriques avec cartes à bords adoucis (rounded-2xl) et liserés dorés discrets",
+    "table_of_contents": "2 colonnes inégales : grand carnet interactif dépliable à gauche (col-span-7), liste détaillée des 7 chapitres à droite (col-span-5)",
+    "pricing_module": "Carte centrale généreuse avec badge 'Prix accessible & conscient 8,90€', décomposition sans artifice, aucune mention d'urgence ni faux compte à rebours"
+  },
+  "motion": {
+    "library": "motion/react (Motion for React bundled)",
+    "smooth_scroll": "Lenis smooth scroll on main marketing layout with moderate damping (1.2) for fluid, weighted momentum",
+    "interactions": [
+      {
+        "element": "Hero headlines",
+        "animation": "Kinetic text reveal: stagger children with split lines, translateY 24px -> 0px, opacity 0 -> 1, duration 0.9s easeOutCubic"
+      },
+      {
+        "element": "3D Book Cover",
+        "animation": "Subtle 3D tilt on mouse hover, gentle floating levitation animation (y: [-6, 6, -6], duration: 5s, ease: 'easeInOut', repeat: Infinity)"
+      },
+      {
+        "element": "Capture Pop-up",
+        "animation": "Soft spring entrance with gentle background backdrop blur transition, respectful non-aggressive timing"
+      },
+      {
+        "element": "Accordion FAQ",
+        "animation": "Smooth height expansion using AnimatePresence with opacity cross-fade"
+      },
+      {
+        "element": "Editorial Ribbon Marquee",
+        "animation": "Linear infinite horizontal drift at 35s speed"
+      }
+    ],
+    "accessibility": "Respect prefers-reduced-motion via motion hooks, falling back to static presentation without disorientation"
+  },
+  "accessibility": {
+    "contrast": "All text pairings verified: #23201C on #FAF7F2 (15.2:1), #5C564E on #FAF7F2 (6.1:1), #FFFFFF on #385244 (7.4:1), #1E2E25 on #EAEFEA (11.8:1). WCAG AAA compliant.",
+    "focus_states": "Visible focus ring with ring-2 ring-[#C69B56] ring-offset-2 ring-offset-[#FAF7F2]",
+    "form_labels": "Explicit Shadcn Label associations for Prénom, Email, RGPD Checkbox",
+    "keyboard_nav": "Full tab order support across Pop-up modal, FAQ toggles, and payment triggers",
+    "test_ids": "Every interactive and meaningful element includes kebab-case data-testid (e.g. data-testid='capture-popup-submit', data-testid='cta-buy-main-button', data-testid='faq-accordion-item-1', data-testid='stripe-checkout-button')"
+  },
+  "components_structure": {
+    "pages": {
+      "Home": "/app/frontend/src/pages/Home.tsx",
+      "Checkout": "/app/frontend/src/pages/Checkout.tsx",
+      "Merci": "/app/frontend/src/pages/Merci.tsx",
+      "Admin": "/app/frontend/src/pages/Admin.tsx",
+      "MentionsLegales": "/app/frontend/src/pages/MentionsLegales.tsx",
+      "CGV": "/app/frontend/src/pages/CGV.tsx",
+      "Confidentialite": "/app/frontend/src/pages/Confidentialite.tsx",
+      "Remboursement": "/app/frontend/src/pages/Remboursement.tsx"
+    },
+    "custom_components": {
+      "Navbar": "/app/frontend/src/components/landing/Navbar.tsx",
+      "CaptureModal": "/app/frontend/src/components/landing/CaptureModal.tsx",
+      "HeroSection": "/app/frontend/src/components/landing/HeroSection.tsx",
+      "EditorialMarquee": "/app/frontend/src/components/landing/EditorialMarquee.tsx",
+      "WhyThisGuide": "/app/frontend/src/components/landing/WhyThisGuide.tsx",
+      "BookPreview3D": "/app/frontend/src/components/landing/BookPreview3D.tsx",
+      "BenefitsGrid": "/app/frontend/src/components/landing/BenefitsGrid.tsx",
+      "ChaptersAccordion": "/app/frontend/src/components/landing/ChaptersAccordion.tsx",
+      "WhoIsThisFor": "/app/frontend/src/components/landing/WhoIsThisFor.tsx",
+      "HonestPledge": "/app/frontend/src/components/landing/HonestPledge.tsx",
+      "PricingCard": "/app/frontend/src/components/landing/PricingCard.tsx",
+      "FaqSection": "/app/frontend/src/components/landing/FaqSection.tsx",
+      "SereneFooter": "/app/frontend/src/components/landing/SereneFooter.tsx"
+    }
+  },
+  "instructions_to_main_agent": {
+    "template_context": "farm-ts (FastAPI backend + React 19 / Vite frontend in TypeScript). Tailwind v4 in frontend/src/index.css with @theme.",
+    "core_features_checklist": [
+      "1. Mandatory Capture Pop-up: Elegant, non-aggressive modal appearing on entry or on button click asking for Prénom + Email + RGPD checkbox to unlock the personalized reading. Saves lead to MongoDB via /api/leads.",
+      "2. Dynamic Personalization: When user submits the popup, store prénom in state/localStorage, greet them warmly in the Hero banner: 'Bienvenue [Prénom], voici votre chemin vers l'abondance intérieure'.",
+      "3. Premium Book Showcase: Interactive 3D cover of 'Le Guide de l'Abondance Intérieure' with golden badge, subtitle, and instant download badge.",
+      "4. Complete Sales Narrative: Sections strictly complying with the French mature 40-55 audience — Pourquoi ce guide, Les 4 piliers d'alignement, Le Sommaire des 7 chapitres, À qui ce guide s'adresse, Notre engagement éthique (aucun faux compte à rebours, prix juste et transparent).",
+      "5. Honest Pricing at 8,90€: Integrated Stripe checkout flow (or simulation if keys unconfigured) leading seamlessly to the /merci page with PDF download link and audio relaxation gift.",
+      "6. Complete French Legal Suite: /mentions-legales, /cgv, /confidentialite, /remboursement with 30-day serene guarantee.",
+      "7. Protected Admin Space (/admin): PIN or password access ('abondance2026') allowing real-time modification of Guide price, PDF download URL, contact email, and browsing/exporting captured leads.",
+      "8. All interactive controls MUST include precise data-testid attributes."
+    ]
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
+    "anti_patterns_avoided": [
+      "NO aggressive red urgency timers or fake discount strike-throughs (e.g. 'était 197€, maintenant 8,90€')",
+      "NO fake popup social proof notifications ('Jean de Lyon vient d'acheter')",
+      "NO dark abrasive gradients or saturated tech blues/purples",
+      "NO generic centered layouts: embrace refined editorial balance with asymmetrical text & visual pairings"
+    ],
+    "craft_standards": [
+      "Use 2-3x generous spacing (py-24, py-32) on marketing sections",
+      "Golden accents must remain soft and delicate (#C69B56 / #D8AE68), never harsh brass",
+      "Vouvoiement chaleureux et respectueux dans toute la rédaction française",
+      "Smooth micro-interactions on every button, card hover, and accordion item"
+    ]
+  }
+}
