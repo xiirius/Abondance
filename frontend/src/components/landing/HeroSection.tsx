@@ -65,7 +65,8 @@ export function HeroSection({ prenom, config }: HeroSectionProps) {
             data-testid="hero-subtitle"
           >
             <motion.p variants={lineVariants} className="font-heading text-xl italic leading-snug text-ink sm:text-2xl">
-              En attendant votre lecture, vous pouvez aller plus loin, si vous le souhaitez.
+              En attendant votre lecture, prenez quelques minutes pour découvrir la suite : vous
+              risqueriez de passer à côté de l'essentiel.
             </motion.p>
             <motion.p variants={lineVariants} className="pt-2">
               J'ai créé ce guide à partir de mes{" "}
